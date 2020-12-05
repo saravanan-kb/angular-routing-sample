@@ -1,0 +1,16 @@
+<h2>Cricket Home list</h2>
+<ul>
+  <li *ngFor="let cricket of cricketHomeList">
+    <a [routerLink]="[cricket]" routerLinkActive="active">
+      {{ cricket }} --- router Link Nav
+    </a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a (click)="routeNavigate('india')"> india ---- via route navigate</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

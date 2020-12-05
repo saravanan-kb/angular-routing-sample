@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let indiaplayer of indianPlayers">
+    <a [routerLink]="['./', indiaplayer.id]" routerLinkActive="active">
+      {{ indiaplayer.name }}
+    </a>
+  </li>
+</ul>
