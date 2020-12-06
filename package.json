@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh-build": "ng build --prod  --base-href /angular-routing-sample/",
-    "gh-publish": "ngh --dir dist/angular-routing-sample"
+    "gh-build": "ng build --prod --base-href https://strsarjs.github.io/angular-routing-sample/",
+    "gh-publish": "ngh --dir dist/angular-routing-sample",
+    "gh-build-publish": "npm run gh-build && npm run gh-publish"
   },
   "private": true,
   "dependencies": {

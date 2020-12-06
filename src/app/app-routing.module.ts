@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then((m) => m.LazyModule),
     canActivate: [Auth],
-    resolve: { data: Resolver },
+    resolve: { resolvedData: Resolver },
   },
   { path: '', redirectTo: '/cricket-home', pathMatch: 'full' },
 

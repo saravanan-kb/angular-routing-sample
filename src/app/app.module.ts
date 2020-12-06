@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { Auth } from './Auth';
 import { HttpClientModule } from '@angular/common/http';
 import { Resolver } from './resolve';
+import { CommonService } from './common-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { Resolver } from './resolve';
     NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [CricketHomeService, Auth, Resolver],
+  providers: [CricketHomeService, Auth, Resolver, CommonService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
