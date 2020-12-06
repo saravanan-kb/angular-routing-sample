@@ -5,13 +5,18 @@ import { IndiaComponent } from './views/cricket-home/india/india.component';
 import { AustraliaComponent } from './views/cricket-home/australia/australia.component';
 import { PlayerComponent } from './views/cricket-home/player/player.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { Auth } from './Auth';
+import { Resolver } from './resolve';
 
 const appRoutes: Routes = [
   {
     path: 'cricket-home',
     component: CricketHomeComponent,
     children: [
-      { path: 'india', component: IndiaComponent },
+      {
+        path: 'india',
+        component: IndiaComponent,
+      },
       { path: 'india/:id', component: PlayerComponent },
       { path: 'australia', component: AustraliaComponent },
       { path: 'australia/:id', component: PlayerComponent },
@@ -20,7 +25,8 @@ const appRoutes: Routes = [
   {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then((m) => m.LazyModule),
-    //  canLoad: [AuthGuard],
+    canActivate: [Auth],
+    resolve: { data: Resolver },
   },
   { path: '', redirectTo: '/cricket-home', pathMatch: 'full' },
 

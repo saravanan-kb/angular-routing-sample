@@ -9,6 +9,9 @@ import { AustraliaComponent } from './views/cricket-home/australia/australia.com
 import { PlayerComponent } from './views/cricket-home/player/player.component';
 import { CricketHomeService } from './views/cricket-home/cricket-home.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { Auth } from './Auth';
+import { HttpClientModule } from '@angular/common/http';
+import { Resolver } from './resolve';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PlayerComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [CricketHomeService],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [CricketHomeService, Auth, Resolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
