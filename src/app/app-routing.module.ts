@@ -7,6 +7,7 @@ import { PlayerComponent } from './views/cricket-home/player/player.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { Auth } from './Auth';
 import { Resolver } from './resolve';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 const appRoutes: Routes = [
   {
@@ -25,10 +26,12 @@ const appRoutes: Routes = [
   {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then((m) => m.LazyModule),
+    // loadChildren: './lazy/lazy.module#LazyModule',
     canActivate: [Auth],
     resolve: { resolvedData: Resolver },
   },
   { path: '', redirectTo: '/cricket-home', pathMatch: 'full' },
+  { path: 'forms', component: HeroFormComponent },
 
   { path: '**', component: NotFoundComponent },
 ];

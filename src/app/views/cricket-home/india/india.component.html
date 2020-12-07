@@ -1,6 +1,11 @@
 <ul>
   <li *ngFor="let indiaplayer of indianPlayers">
-    <a [routerLink]="['./', indiaplayer.id]" routerLinkActive="active">
+    <a
+      [routerLink]="['./', indiaplayer.id]"
+      routerLinkActive="active"
+      [queryParams]="{ test: 'testID' }"
+      [fragment]="['link']"
+    >
       {{ indiaplayer.name }}
     </a>
   </li>

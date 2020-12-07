@@ -17,12 +17,15 @@ export class PlayerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.activeRoute.snapshot.queryParams);
+    this.activeRoute.queryParams.subscribe((params) => {
+      console.log(params);
+    });
     this.activeRoute.params.subscribe((params) => {
       console.log(params['id']);
       this.targetedPlayer = this.cricketHomeService.getPlayerNameFromId(
         Number(params['id'])
       );
-      console.log(this.targetedPlayer);
     });
   }
 
